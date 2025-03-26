@@ -1344,6 +1344,7 @@ body.light-mode .progress-bar {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    /* Existing rules... */
     .hamburger {
         display: block;
     }
@@ -1351,15 +1352,15 @@ body.light-mode .progress-bar {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Adjusted to match navbar height */
+        top: 80px;
         left: 0;
         width: 100%;
-        background-color: #1e1e1e; /* Match navbar background */
+        background-color: #1e1e1e;
         padding: 20px 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     body.light-mode .nav-menu {
-        background-color: #ffffff; /* Match navbar background in light mode */
+        background-color: #ffffff;
     }
     .nav-menu.active {
         display: flex;
@@ -1369,14 +1370,14 @@ body.light-mode .progress-bar {
         text-align: center;
     }
     .nav-actions {
-        display: none; /* Hide nav-actions on mobile to simplify layout */
+        display: none;
     }
     .home-section {
-        min-height: auto; /* Prevent excessive scrolling on mobile */
-        padding: 100px 20px 30px; /* Added padding-top to account for navbar */
+        min-height: auto;
+        padding: 100px 20px 30px;
     }
     .home-content {
-        margin: 0 20px 30px; /* Adjusted margin to fit below navbar */
+        margin: 0 20px 30px;
     }
     .home-content h1 {
         font-size: 36px;
@@ -1388,7 +1389,7 @@ body.light-mode .progress-bar {
     .home-content .bio,
     .home-content .skills-snapshot,
     .home-content .mission {
-        font-size: 14px; /* Reduced font size for better readability on mobile */
+        font-size: 14px;
     }
     .home-actions {
         display: flex;
@@ -1454,6 +1455,20 @@ body.light-mode .progress-bar {
     .contact-wrapper {
         flex-direction: column;
         gap: 20px;
+    }
+
+    /* Add styling for about-actions to fix button alignment on mobile */
+    .about-actions {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px; /* Add spacing between buttons */
+        align-items: center; /* Center the buttons */
+    }
+
+    .about-actions .cta-btn {
+        width: 100%;
+        max-width: 250px; /* Ensure buttons don’t stretch too wide */
+        text-align: center;
     }
 }
 .loader {
