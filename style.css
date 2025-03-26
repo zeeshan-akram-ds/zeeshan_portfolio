@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 80px; /* Added to ensure content isn’t hidden under fixed navbar */
 }
 
 .navbar {
@@ -133,6 +134,7 @@ body {
     background-color: #181818;
     transition: background-color 0.4s;
     flex: 1;
+    min-height: 100vh; /* Ensure the section takes full viewport height */
 }
 
 .home-content {
@@ -492,6 +494,7 @@ body.light-mode .certifications-list li i {
         max-width: 100%;
     }
 }
+
 /* Footer */
 .footer {
     background-color: #1e1e1e;
@@ -640,6 +643,7 @@ body.light-mode .back-to-top:hover {
         gap: 10px;
     }
 }
+
 /* Projects Section */
 .projects-section {
     padding: 100px 40px 60px;
@@ -698,8 +702,8 @@ body.light-mode .back-to-top:hover {
 
 .filter-btn {
     padding: 8px 20px;
-    background: #1e1e1e;
-    border: none;
+    background: #1e1e1e; /* Solid background for dark mode */
+    border: 1px solid #333; /* Added border for better visibility */
     border-radius: 8px;
     color: #e0e0e0;
     font-size: 14px;
@@ -715,6 +719,22 @@ body.light-mode .back-to-top:hover {
 .filter-btn.active {
     background: #26c6da;
     color: #181818;
+}
+
+/* Added: Light mode styles for filter buttons */
+body.light-mode .filter-btn {
+    background: #e0e0e0; /* Light gray background for light mode */
+    border: 1px solid #ccc; /* Light border for light mode */
+    color: #212121; /* Dark text for light mode */
+}
+
+body.light-mode .filter-btn:hover {
+    background: #d0d0d0;
+}
+
+body.light-mode .filter-btn.active {
+    background: #1976d2; /* Blue background for active state in light mode */
+    color: #fff;
 }
 
 .projects-grid {
@@ -1238,7 +1258,8 @@ body.light-mode .contact-section {
 body.light-mode .nav-link,
 body.light-mode .social-link,
 body.light-mode .current-section,
-body.light-mode .theme-toggle {
+body.light-mode .theme-toggle,
+body.light-mode .hamburger { /* Added for hamburger in light mode */
     color: #212121;
 }
 
@@ -1247,7 +1268,6 @@ body.light-mode .milestone-card,
 body.light-mode .timeline-title,
 body.light-mode .timeline-content,
 body.light-mode .project-card,
-body.light-mode .filter-btn,
 body.light-mode .modal-content,
 body.light-mode .skill-card,
 body.light-mode .contact-form input,
@@ -1264,7 +1284,6 @@ body.light-mode .section-title,
 body.light-mode .sub-title,
 body.light-mode .quote,
 body.light-mode .stat-number,
-body.light-mode .filter-btn.active,
 body.light-mode .project-card.featured .featured-badge {
     color: #1976d2;
 }
@@ -1332,11 +1351,15 @@ body.light-mode .progress-bar {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 80px; /* Adjusted to match navbar height */
         left: 0;
         width: 100%;
-        background-color: inherit;
+        background-color: #1e1e1e; /* Match navbar background */
         padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+    }
+    body.light-mode .nav-menu {
+        background-color: #ffffff; /* Match navbar background in light mode */
     }
     .nav-menu.active {
         display: flex;
@@ -1346,17 +1369,36 @@ body.light-mode .progress-bar {
         text-align: center;
     }
     .nav-actions {
-        flex-direction: column;
-        gap: 15px;
+        display: none; /* Hide nav-actions on mobile to simplify layout */
+    }
+    .home-section {
+        min-height: auto; /* Prevent excessive scrolling on mobile */
+        padding: 100px 20px 30px; /* Added padding-top to account for navbar */
     }
     .home-content {
-        margin: 80px 20px 30px;
+        margin: 0 20px 30px; /* Adjusted margin to fit below navbar */
     }
     .home-content h1 {
         font-size: 36px;
     }
     .home-content h2 {
         font-size: 22px;
+    }
+    .home-content .tagline,
+    .home-content .bio,
+    .home-content .skills-snapshot,
+    .home-content .mission {
+        font-size: 14px; /* Reduced font size for better readability on mobile */
+    }
+    .home-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .home-actions .cta-btn {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
     }
     .about-section {
         padding: 80px 20px 60px;
